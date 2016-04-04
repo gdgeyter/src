@@ -1,3 +1,15 @@
+{% extends "base.html" %}
+
+
+{% block head_title %} Welcome | {{ block.super }}
+{% endblock %}
+
+{% block jumbotron %}
+{{ block.super }}
+    HELLO!!
+{% endblock %}
+
+{% block content %}
 <h1 xmlns="http://www.w3.org/1999/html">{{ title }}</h1>
 
 {{ user }}
@@ -12,3 +24,4 @@
 {#<input>#}
 
 </form>
+{% endblock %}
