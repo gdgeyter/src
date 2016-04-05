@@ -14,12 +14,18 @@
 
     {% include 'head_css.html' %}
 
+  <style>
+{% block style %}
+{% endblock  %}
+</style>
+
+
   <body>
 
 {% include 'navbar.html' %}
 
 
-    <div class="container-fluid">
+    <div class="container">
 
     {% block jumbotron %}
     {% endblock %}

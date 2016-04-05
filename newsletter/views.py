@@ -38,7 +38,7 @@ def home(request):
         print(instance.timestamp)
 
 
-    return render(request, "example_fluid.html", context)
+    return render(request, "home.html", context)
 
 def contact(request):
 

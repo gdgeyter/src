@@ -5,28 +5,36 @@
 {% block head_title %} Welcome | {{ block.super }}
 {% endblock %}
 
+<style>
+{% block style %}
+
+{% endblock  %}
+</style>
+
 {% block jumbotron %}
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron">
-        <h1>Navbar example</h1>
-        <p>This example is a quick exercise to illustrate how the default, static and fixed to top navbar work. It
-            includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
-        <p>To see the difference between static and fixed top navbars, just scroll.</p>
-        <p>
-            <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">View navbar
-                docs &raquo;</a>
-        </p>
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Welcome</h1>
+                <p>Welcome to Fisrail, t his is an example of a landing page</p>
+                <p>
+                    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join us!
+                        (Free)&raquo;</a>
+                </p>
+            </div>
+            <div class="col-sm-6" style="background-color: black; height: 300px" >
+
+            </div>
+        </div>
     </div>
 {% endblock %}
 
 {% block content %}
     <div class="row">
-        <div class="col-sm-6 col-md-3">
-            <h1 xmlns="http://www.w3.org/1999/html">{{ title }}</h1>
 
-            {{ user }}
-
-            {{ request.user }}
+        <div class="col-sm-3 pull-right">
+            <p class="lead text-align-center">{{ title }}</p>
 
             <form method="POST" action="">{% csrf_token %}
                 {{ form|crispy }}
@@ -34,6 +42,15 @@
 
                 {#<input = 'text'>#}
                 {#<input>#}
+        </div>
+        <div class="col-sm-3">
+        <p class="lead text-align-center">Built with Django &amp; Bootstrap</p>
+        </div>
+        <div class="col-sm-3">
+        <p class="lead text-align-center">Created for starters</p>
+        </div>
+        <div class="col-sm-3">
+        <p class="lead text-align-center">Always open source </p>
         </div>
     </div>
     </form>
