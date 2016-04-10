@@ -6,25 +6,30 @@
 {% endblock %}
 
 <style>
-{% block style %}
-
+    {% block style %}
+        .jumbotron {
+            background-color: #A0CA7C;
+            color: #525252;
+        }
 {% endblock  %}
 </style>
 
 {% block jumbotron %}
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron">
-        <div class="row">
-            <div class="col-sm-6">
-                <h1>Welcome</h1>
-                <p>Welcome to Fisrail, this is an example of a landing page</p>
-                <p>
-                    <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join us!
-                        (Free)&raquo;</a>
-                </p>
-            </div>
-            <div class="col-sm-6" style="background-color: black; height: 300px" >
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Welcome</h1>
+                    <p>Welcome to Fishrail, this is an example of a landing page</p>
+                    <p>
+                        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join us!
+                            (Free)&raquo;</a>
+                    </p>
+                </div>
+                <div class="col-sm-6" style="background-color: black; height: 300px">
 
+                </div>
             </div>
         </div>
     </div>

@@ -1,8 +1,45 @@
 body {
-  min-height: 2000px;
+    min-height: 2000px;
 }
 
 .navbar-static-top {
-  margin-bottom: 19px;
+    background-color: #525252;
+    border-color: #525252;
+    margin-bottom: 0px !important;
+}
+
+.navbar-default .navbar-brand {
+    color: #A0CA7C;
+    font-style: oblique;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.navbar-default .navbar-brand:hover {
+    color: #FFF ;
+    font-style: oblique;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: #A0CA7C;
+
+}
+.navbar-default .navbar-nav > li > a:hover {
+    color: #FFF;
+
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent !important;
+}
+
+.navbar-toggle {
+    border-color: #A0CA7C !important;
+}
+
+.navbar-toggle:hover {
+    background-color: #A0CA7C !important;
 }
 
