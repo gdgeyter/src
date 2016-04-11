@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load crispy_forms_tags %}
-{% load static %}
+{% load staticfiles %}
 
 
 {% block head_title %} Welcome | {{ block.super }}
@@ -16,6 +16,7 @@
 </style>
 
 {% block jumbotron %}
+    {% if not request.user.is_authenticated %}
     <!-- Main component for a primary marketing message or call to action -->
     <div class="jumbotron">
         <div class="container">
@@ -35,20 +36,22 @@
         </div>
     </div>
     </div>
+    {% endif %}
 {% endblock %}
 
 {% block content %}
-    <div class="row">
+    {% if request.user.is_authenticated %}
+        <h1>You are logged in!</h1>
+        {{ queryset }}
 
+    {% else %}
+    <div class="row">
         <div class="col-sm-3 pull-right">
             <p class="lead text-align-center">Sign Up Now</p>
 
             <form method="POST" action="">{% csrf_token %}
                 {{ form|crispy }}
                 <input class="btn  btn-primary" type="submit" value="Sign Up"/>
-
-                {#<input = 'text'>#}
-                {#<input>#}
 
         </div>
         <div class="col-sm-3">
@@ -79,4 +82,5 @@
         </div>
     </div>
     </form>
+    {% endif %}
 {% endblock %}

@@ -36,7 +36,10 @@ def home(request):
         }
         print(instance.email)
         print(instance.timestamp)
-
+    if request.user.is_authenticated() and request.user.is_staff:
+        context = {
+            "queryset": [123, 456]
+        }
 
     return render(request, "home.html", context)
 
