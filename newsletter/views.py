@@ -23,11 +23,8 @@ def home(request):
 
     if form.is_valid():
         instance = form.save(commit=False)
-        full_name = form.cleaned_data.get("full_name")
-        if not full_name:
-            full_name = "New full name"
-        instance.full_name = full_name
-
+        first_name = form.cleaned_data.get("first_name")
+        last_name = form.cleaned_data.get("last_name")
         # if not instance.full_name:
         #     instance.full_name = "Justin"
         instance.save()
@@ -96,10 +93,8 @@ def clear_landing_page(request):
 
     if form.is_valid():
         instance = form.save(commit=False)
-        full_name = form.cleaned_data.get("full_name")
-        if not full_name:
-            full_name = "New full name"
-        instance.full_name = full_name
+        first_name = form.cleaned_data.get("first_name")
+        last_name = form.cleaned_data.get("last_name")
         bodytext = False
         instance.save()
         context = {
@@ -110,12 +105,13 @@ def clear_landing_page(request):
         # for key, value in  form.cleaned_data.items():
         #     print(key,value)
         form_email = form.cleaned_data.get('email')
-        form_full_name = form.cleaned_data.get('full_name')
+        form_first_name = form.cleaned_data.get('first_name')
+        form_last_name = form.cleaned_data.get('last_name')
         # print(email, message, full_name)
         subject = 'Fishrail newsletter'
         from_email = settings.EMAIL_HOST_USER
         to_email = [form_email]
-        contact_message = "Hi there " + form_full_name + ", \n \n" + "Thank you very much for subscribing to our newsletter! \nWe'll keep you informed on any updates \n \nKind regards \nThe Fishrail team"
+        contact_message = "Hi there " + form_first_name + ", \n \n" + "Thanks for subscribing to our newsletter! \nWe'll keep you informed on any updates \n \nKind regards \nThe Fishrail team"
         send_mail(subject, contact_message, from_email, to_email, fail_silently=False)
 
 

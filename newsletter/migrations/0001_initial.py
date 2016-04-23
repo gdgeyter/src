@@ -13,9 +13,10 @@ class Migration(migrations.Migration):
         migrations.CreateModel(
             name='SignUp',
             fields=[
-                ('id', models.AutoField(serialize=False, verbose_name='ID', auto_created=True, primary_key=True)),
+                ('id', models.AutoField(serialize=False, auto_created=True, primary_key=True, verbose_name='ID')),
                 ('email', models.EmailField(max_length=254)),
-                ('full_name', models.CharField(blank=True, null=True, max_length=120)),
+                ('first_name', models.CharField(null=True, blank=True, max_length=120)),
+                ('last_name', models.CharField(null=True, blank=True, max_length=120)),
                 ('timestamp', models.DateTimeField(auto_now_add=True)),
                 ('updated', models.DateTimeField(auto_now=True)),
             ],
