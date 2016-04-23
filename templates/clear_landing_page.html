@@ -1,0 +1,53 @@
+{% load staticfiles %}
+{% load crispy_forms_tags  %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{#<meta charset="utf-8">#}
+<title>Welcome</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon" />
+  <link href="http://fonts.googleapis.com/css?family=Kotta+One|Cantarell:400,700" rel="stylesheet" type="text/css">
+  <!-- Not required: presentational-only.css only contains CSS for prettifying the demo -->
+  <link rel="stylesheet" href="{% static 'css/presentational-only.css' %}">
+  <!-- responsive-full-background-image.css stylesheet contains the code you want -->
+  <link rel="stylesheet" href="{% static 'css/responsive-full-background-image.css' %}">
+</head>
+<body>
+<header class="container">
+    <section class="content">
+        <h1>{{ title }}</h1>
+        {% if bodytext %}
+            <br>
+            <br>
+            <br>
+            Do you want to improve your Recruitment based on data analytics?
+            <br>
+            Do you want to change your Performance Management?
+            <br>
+            Do you want to start with People Analytics without hardcore data science background?
+            <br>
+            <br>
+            <br>
+            <h2> Curious? please sign up, we're excited to update you first hand!</h2>
+            If you leave us your email, we are happy to let you know once we start our beta run!
+            <br>
+            We are not consultants delivering services, but we will give you top recommendations & guidance.
+            <br>
+            <br>
+            <form method="POST" action="">{% csrf_token %}
+            {{ form|crispy }}
+            <br>
+            <input class="button" type="submit" value="Sign Up"/>
+            <br>
+            <br>
+        {% else %}
+            <br>
+            <br>
+            <h2> Lets keep in touch!</h2>
+        {% endif %}
+
+    </section>
+</header>
+</body>
+</html>

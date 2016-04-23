@@ -121,16 +121,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
-
-STATIC_ROOT = '/home/gdgeyter/webapps/fishrail_static/static_root/'
+os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_root")
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_root/")
         #os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "static_root")
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static_in_pro", "our_static"),
         # '/var/www/static/',
 )
-MEDIA_URL = '/home/gdgeyter/webapps/fishrail_static/media_root/'
-#MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root")
+MEDIA_URL = os.path.join(os.path.dirname(BASE_DIR), "static_in_env", "media_root/")
 
 
 

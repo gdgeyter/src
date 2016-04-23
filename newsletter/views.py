@@ -75,7 +75,51 @@ def contact(request):
 
     return render(request, "forms.html", context)
 
+def clear_landing_page(request):
+    title = "Awesome! You found Fishrail!"
+    # if request.user.is_authenticated():
+    #     title = "My Title %s" %(request.user)
 
+    # if request.method == 'POST':
+
+    form = SignUpForm(request.POST or None)
+
+    bodytext = True
+
+
+    context = {
+        "title": title,
+        "form": form,
+        "bodytext": bodytext,
+
+    }
+
+    if form.is_valid():
+        instance = form.save(commit=False)
+        full_name = form.cleaned_data.get("full_name")
+        if not full_name:
+            full_name = "New full name"
+        instance.full_name = full_name
+        bodytext = False
+        instance.save()
+        context = {
+            "title": 'Thank you',
+            "bodytext": bodytext,
+
+        }
+        # for key, value in  form.cleaned_data.items():
+        #     print(key,value)
+        form_email = form.cleaned_data.get('email')
+        form_full_name = form.cleaned_data.get('full_name')
+        # print(email, message, full_name)
+        subject = 'Fishrail newsletter'
+        from_email = settings.EMAIL_HOST_USER
+        to_email = [form_email]
+        contact_message = "Hi there " + form_full_name + ", \n \n" + "Thank you very much for subscribing to our newsletter! \nWe'll keep you informed on any updates \n \nKind regards \nThe Fishrail team"
+        send_mail(subject, contact_message, from_email, to_email, fail_silently=False)
+
+
+    return render(request, "clear_landing_page.html", context)
 
 
 
