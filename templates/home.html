@@ -56,42 +56,42 @@
         {% endif %}
 
     {% else %}
-    <div class="row">
-        <div class="col-sm-3 pull-right">
-            <p class="lead text-align-center">Sign Up Now</p>
+        <div class="row">
+            <div class="col-sm-3 pull-right">
+                <p class="lead text-align-center">Sign Up Now</p>
 
-            <form method="POST" action="">{% csrf_token %}
-                {{ form|crispy }}
-                <input class="btn  btn-primary" type="submit" value="Sign Up"/>
-
-        </div>
-        <div class="col-sm-3">
-            <p class="lead text-align-center">Platform</p>
-            <img src="{% static 'img/Platform logo.png' %}" class="img-responsive"/>
-        </div>
-        <div class="col-sm-3">
-            <p class="lead text-align-center">User based ratings
-                <br/>
-                <br/>
+                <form method="POST" action="">{% csrf_token %}
+                    {{ form|crispy }}
+                    <input class="btn  btn-primary" type="submit" value="Sign Up"/>
+</form>
+            </div>
+            <div class="col-sm-3">
+                <p class="lead text-align-center">Platform</p>
+                <img src="{% static 'img/Platform logo.png' %}" class="img-responsive"/>
+            </div>
+            <div class="col-sm-3">
+                <p class="lead text-align-center">User based ratings
+                    <br/>
+                    <br/>
                 <span class="rating">
           <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span
                         class="star"></span>
         </span>
-                <br/>
-                <br/>
+                    <br/>
+                    <br/>
                     <i class="fa fa-bar-chart fa-5x"></i>
-            </p>
-        </div>
-        <div class="col-sm-3">
-            <p class="lead text-align-center">Advanced analytics
-                <br/>
+                </p>
+            </div>
+            <div class="col-sm-3">
+                <p class="lead text-align-center">Advanced analytics
+                    <br/>
                 <span class="fa-stack fa-lg fa-5x">
 {#                    <i class="fa fa-cog fa-stack-2x fa-spin"></i>#}
                     <i class="fa fa-cog fa-stack-2x"></i>
                     </span>
-            </p>
+                </p>
+            </div>
         </div>
-    </div>
-    </form>
+
     {% endif %}
 {% endblock %}

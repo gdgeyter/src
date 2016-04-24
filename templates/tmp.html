@@ -1,0 +1,83 @@
+
+
+</head>
+<body>
+<header class="container pull-right">
+
+    <section class="content col-lg-6" >
+
+        {% if bodytext %}
+            <h1>{{ title }}</h1>
+                <div class="row">
+        <div class="col-sm-6 pull-right">
+<h2> Curious? please sign up, we're excited to update you first hand!</h2>
+                If you leave us your email, we are happy to let you know once we start our beta run!
+                <br>
+                We are not consultants delivering services, but we will give you top recommendations & guidance.
+                <br>
+                <br>
+                <form method="POST" action="">{% csrf_token %}
+                    {{ form|crispy }}
+                    <br>
+                    <input class="button" type="submit" value="Sign Up"/>
+                    <br>
+                    <br>
+
+        </div>
+        <div class="col-sm-6">
+                                Do you want to improve your Recruitment based on data analytics?
+                <br>
+                Do you want to change your Performance Management?
+                <br>
+                Do you want to start with People Analytics without hardcore data science background?
+        </div>
+    </div>
+
+        {% else %}
+            <br>
+            <br>
+            <h2> Lets keep in touch!</h2>
+        {% endif %}
+
+    </section>
+</header>
+< class="container2">
+
+    <section class="content col-lg-6" >
+
+        {% if bodytext %}
+            <h1>{{ title }}</h1>
+                <div class="row">
+        <div class="col-sm-6 pull-right">
+<h2> Curious? please sign up, we're excited to update you first hand!</h2>
+                If you leave us your email, we are happy to let you know once we start our beta run!
+                <br>
+                We are not consultants delivering services, but we will give you top recommendations & guidance.
+                <br>
+                <br>
+                <form method="POST" action="">{% csrf_token %}
+                    {{ form|crispy }}
+                    <br>
+                    <input class="button" type="submit" value="Sign Up"/>
+                    <br>
+                    <br>
+
+        </div>
+        <div class="col-sm-6">
+                                Do you want to improve your Recruitment based on data analytics?
+                <br>
+                Do you want to change your Performance Management?
+                <br>
+                Do you want to start with People Analytics without hardcore data science background?
+        </div>
+    </div>
+
+        {% else %}
+            <br>
+            <br>
+            <h2> Lets keep in touch!</h2>
+        {% endif %}
+
+    </section>
+</>
+</body>

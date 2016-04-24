@@ -117,7 +117,7 @@ if not settings.DEBUG:
 	        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 	        'NAME': "dbfishrail",
 	        'USER': "gdgeyter",
-	        'PASSWORD': "*********",
+	        'PASSWORD': "gert0408",
 	        'HOST': '127.0.0.1',
 	        'PORT': '5432',
 	    }

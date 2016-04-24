@@ -2,8 +2,10 @@
  * Not required
  */
 
-html, body, .container {
-  height: 100%;
+html, body, .container-fluid {
+    overflow-y: auto;
+    margin: 0px;
+     margin: 0; padding: 0; outline: 0;
 }
 
 /* Reset */
@@ -91,12 +93,61 @@ blockquote cite {
 
 .container {
   display: table;
+  padding-top: 0px;
+    padding-bottom: 0px;
+    horiz-align: right;
+    background-color: rgba(0,0,0,0.7);
+}
+
+.container-fluid {
+    /*font: 18px/23px "Cantarell", sans-serif;*/
+  color: #ffffff;
+    text-align: center;
   padding-top: 80px;
-  width: 100%;
+    margin-top: 0px;
+        margin-right: 0px;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,0.0);
+}
+@media (max-width: 797px) {
+    body {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}
+
+.leftcol{
+    vertical-align: middle;
+    margin-top: 0px;
+    padding-top: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-right: 0px;
+}
+
+.rightcol{
+    font: 18px/23px "Cantarell", sans-serif;
+    vertical-align: middle;
+    text-align: left;
+    background-color: rgba(0,0,0,0.5);
+    padding-top: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    padding-right: 0px;
+    padding: 0px;
+}
+
+.container2 {
+  display: table;
+  padding-top: 80px;
+  width: 90%;
+    horiz-align: right;
+    background-color: rgba(0,0,0,0.3);
 }
 
 .content {
   display: table-cell;
+    width: 100%;
   vertical-align: middle;
   text-align: center;
 }
@@ -126,7 +177,7 @@ blockquote cite {
   display: inline-block;
   padding: 6px 20px;
   color: white;
-  background-color: darkgray;¥
+  background-color: darkgray;
   border: 3px solid white;
   border-radius: 5px;
   font-weight: 700;
@@ -143,7 +194,7 @@ blockquote cite {
 /* Media Queries */
 @media only screen and (max-width: 340px) {
   
-  .container {
+  .container-fluid {
     position: relative;
     display: block;
     float: left;
@@ -151,6 +202,7 @@ blockquote cite {
     margin: 0 auto;
     padding: 80px 0 0 0;
   }
+
   
   #Sign-Up {
     float: left;
@@ -162,11 +214,13 @@ blockquote cite {
     font-size: 18px;
     line-height: 23px;
   } 
-  
+  .header {
+      display: none;
+  }
   .content, blockquote {  
     display: inline;
     margin: 0 auto;
-    padding-top: 80px;
+    padding-top: 0px;
     vertical-align: baseline;
   }
 
@@ -195,7 +249,4 @@ blockquote cite {
     line-height: 20px;
   }
 
-  html, body, .container {
-    height: auto;
-  }
 }

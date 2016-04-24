@@ -73,7 +73,7 @@ def contact(request):
     return render(request, "forms.html", context)
 
 def clear_landing_page(request):
-    title = "Awesome! You found Fishrail!"
+    title = "Awesome! \n You found Fishrail!"
     # if request.user.is_authenticated():
     #     title = "My Title %s" %(request.user)
 

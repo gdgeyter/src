@@ -6,7 +6,7 @@ content: none;
 }
 body {
   /* Location of the image */
-  background-image: url(../img/background.jpg);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(../img/background4.jpg);
   
   /* Image is centered vertically and horizontally at all times */
   background-position: center center;
@@ -34,12 +34,13 @@ body {
   body {
     /* The file size of this background image is 93% smaller
      * to improve page load speed on mobile internet connections */
-    background-image: url(../img/background.jpg);
+    background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(../img/background4.jpg);
+
   }
 	}
 
 h1 {
-	font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+	font-family: "Cantarell", sans-serif;
 	font-size: 48px;
 	font-style: normal;
 	font-variant: normal;
@@ -47,7 +48,7 @@ h1 {
 	line-height: 52.8px;
 }
 h3 {
-	font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+	font-family: "Cantarell", sans-serif;
 	font-size: 28px;
 	font-style: normal;
 	font-variant: normal;
@@ -55,7 +56,7 @@ h3 {
 	line-height: 30.8px;
 }
 p {
-	font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+	font-family: "Cantarell", sans-serif;
 	font-size: 28px;
 	font-style: normal;
 	font-variant: normal;
@@ -63,7 +64,7 @@ p {
 	line-height: 40px;
 }
 blockquote {
-	font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+	font-family: "Cantarell", sans-serif;
 	font-size: 42px;
 	font-style: normal;
 	font-variant: normal;
@@ -71,7 +72,7 @@ blockquote {
 	line-height: 60px;
 }
 pre {
-	font-family: Impact, Haettenschweiler, 'Franklin Gothic Bold', Charcoal, 'Helvetica Inserat', 'Bitstream Vera Sans Bold', 'Arial Black', 'sans serif';
+	font-family: "Cantarell", sans-serif;
 	font-size: 26px;
 	font-style: normal;
 	font-variant: normal;
