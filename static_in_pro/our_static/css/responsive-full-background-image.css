@@ -6,7 +6,7 @@ content: none;
 }
 body {
   /* Location of the image */
-  background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(../img/background4.jpg);
+  background-image: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url(../img/Black_fish2.png);
   
   /* Image is centered vertically and horizontally at all times */
   background-position: center center;
@@ -34,8 +34,7 @@ body {
   body {
     /* The file size of this background image is 93% smaller
      * to improve page load speed on mobile internet connections */
-    background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(../img/background4.jpg);
-
+    background-image: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(../img/Black_fish2_Mobile.png);
   }
 	}
 

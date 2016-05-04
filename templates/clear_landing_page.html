@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Welcome</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="icon" href="{% static 'img/favicon.ico' %}" type="image/x-icon"/>
+    <link rel="icon" href="{% static 'img/Fishrail2.ico' %}" type="image/x-icon"/>
     <link href="http://fonts.googleapis.com/css?family=Kotta+One|Cantarell:400,700" rel="stylesheet" type="text/css">
     <!-- Not required: presentational-only.css only contains CSS for prettifying the demo -->
     <link rel="stylesheet" href="{% static 'css/presentational-only.css' %}">
@@ -20,25 +20,32 @@
 <div class="container-fluid">
     {% if bodytext %}
         <div class="leftcol col-lg-9 col-md-9 col-sm-9">
+        <br>
             <br>
             <br>
-
-            <h1 style="font-family:Impact; font-size: 40px">{{ title }}</h1>
             <br>
             <br>
-            <p style="font-size: 20px">Do you want to change your Performance Management?</p>
-            <br><br>
-            <p style="font-size: 20px">Do you want to improve your Recruitment based on data analytics?</p>
-            <br><br>
-            <p style="font-size: 20px">Do you want to start with People Analytics without hardcore data science
-                background?</p>
+            <br>
+            <br>
+            <br>
+{#            <br>#}
+{#            <br>#}
+{##}
+{#            <h1 style="font-family:Impact; font-size: 40px">{{ title }}</h1>#}
+{#            <br>#}
+{#            <br>#}
+{#            <p style="font-size: 20px">Do you want to change your Performance Management?</p>#}
+{#            <br><br>#}
+{#            <p style="font-size: 20px">Do you want to improve your Recruitment based on data analytics?</p>#}
+{#            <br><br>#}
+{#            <p style="font-size: 20px">Do you want to start with People Analytics without hardcore data science#}
+{#                background?</p>#}
         </div>
         <div class="rightcol col-lg-3 col-md-3 col-sm-3 pull-right">
             <h2> Curious? </h2>
             <br>
             Please sign up, we're excited to update you first hand!
-            If you leave us your email, we are happy to let you know once we start our beta run!
-            We are not consultants delivering services, but we will give you top recommendations & guidance.
+            If you leave us your email, we are happy to let you know once we launch!
             <br>
             <br>
             <form method="POST" action="">{% csrf_token %}
