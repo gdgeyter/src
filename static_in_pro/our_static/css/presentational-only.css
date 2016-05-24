@@ -17,7 +17,7 @@ html, body, h1, p, a, div, section {
 }
 
 /* Basic */
-body { 
+body {
   font: 18px/23px "Cantarell", sans-serif;
   color: #ffffff;
 }
@@ -48,7 +48,7 @@ blockquote {
   max-width: 480px;
   margin: 15px auto;
   padding: 15px;
-  background-color: rgba(0, 0, 0, 0.3);  
+  background-color: rgba(0, 0, 0, 0.3);
   color: #e1e1e1;
   font-family: "Kotta One", serif;
   font-size: 22px;
@@ -96,7 +96,7 @@ blockquote cite {
   padding-top: 0px;
     padding-bottom: 0px;
     horiz-align: right;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.0);
 }
 
 .container-fluid {
@@ -114,6 +114,16 @@ blockquote cite {
         padding-left: 0px;
         padding-right: 0px;
     }
+    .container-fluid {
+    /*font: 18px/23px "Cantarell", sans-serif;*/
+  color: #ffffff;
+    text-align: center;
+  padding-top: 150px;
+    margin-top: 0px;
+        margin-right: 0px;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,0.0);
+}
 }
 
 .leftcol{
@@ -129,12 +139,15 @@ blockquote cite {
     font: 18px/23px "Cantarell", sans-serif;
     vertical-align: middle;
     text-align: left;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(255,255,255,0.3);
     padding-top: 0px;
     padding-left: 0px;
     margin-right: 0px;
-    padding-right: 0px;
+    padding-right: 800px;
     padding: 0px;
+    -moz-border-radius: 15px;
+    border-radius: 20px;
+    padding:5px;
 }
 
 .container2 {
@@ -142,7 +155,7 @@ blockquote cite {
   padding-top: 80px;
   width: 90%;
     horiz-align: right;
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0,0,0,0.0);
 }
 
 .content {
@@ -193,7 +206,7 @@ blockquote cite {
 
 /* Media Queries */
 @media only screen and (max-width: 340px) {
-  
+
   .container-fluid {
     position: relative;
     display: block;
@@ -203,21 +216,21 @@ blockquote cite {
     padding: 80px 0 0 0;
   }
 
-  
+
   #Sign-Up {
     float: left;
     margin-right: 10px;
-    
+
   }
-  
+
   body h1 {
     font-size: 18px;
     line-height: 23px;
-  } 
+  }
   .header {
       display: none;
   }
-  .content, blockquote {  
+  .content, blockquote {
     display: inline;
     margin: 0 auto;
     padding-top: 0px;

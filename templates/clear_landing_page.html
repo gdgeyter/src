@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <title>Welcome</title>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <link rel="icon" href="{% static 'img/Fishrail2.ico' %}" type="image/x-icon"/>
+    <link rel="icon" href="{% static 'img/testico.ico' %}" type="image/x-icon"/>
     <link href="http://fonts.googleapis.com/css?family=Kotta+One|Cantarell:400,700" rel="stylesheet" type="text/css">
     <!-- Not required: presentational-only.css only contains CSS for prettifying the demo -->
     <link rel="stylesheet" href="{% static 'css/presentational-only.css' %}">
@@ -19,7 +19,7 @@
 
 <div class="container-fluid">
     {% if bodytext %}
-        <div class="leftcol col-lg-9 col-md-9 col-sm-9">
+        <div class="leftcol col-lg-7 col-md-7 col-sm-8">
         <br>
             <br>
             <br>
@@ -41,20 +41,27 @@
 {#            <p style="font-size: 20px">Do you want to start with People Analytics without hardcore data science#}
 {#                background?</p>#}
         </div>
-        <div class="rightcol col-lg-3 col-md-3 col-sm-3 pull-right">
-            <h2> Curious? </h2>
+        <div class="rightcol col-lg-4 col-md-4 col-sm-4">
+            <h2> Thanks for visiting <font color = "0740a8"><strong>fishrail</strong></font> </h2>
             <br>
-            Please sign up, we're excited to update you first hand!
-            If you leave us your email, we are happy to let you know once we launch!
+            It's all about People Analytics for you!
+            <br>
+            <br>
+            Please leave your contact details below,
+            and we’re more than happy to tell all about it and provide you a
+            <font color = "0740a8"><strong> 1 year free premium access</strong></font> when we launch.
             <br>
             <br>
             <form method="POST" action="">{% csrf_token %}
                 {{ form|crispy }}
                 <br>
-                <input class="button" type="submit" value="Sign Up"/>
+                <input class="button" type="submit" value="Send"/>
                 <br>
                 <br>
         </div>
+        <div class="leftcol col-lg-1 col-md-1 col-sm-0">
+        </div>
+
 
     {% else %}
         <br>
