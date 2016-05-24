@@ -109,6 +109,21 @@ blockquote cite {
     vertical-align: middle;
     background-color: rgba(0,0,0,0.0);
 }
+.rightcol{
+    font: 18px/23px "Cantarell", sans-serif;
+    vertical-align: middle;
+    text-align: left;
+    background-color: rgba(255,255,255,0.2);
+    padding-top: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    padding-right: 800px;
+    padding: 0px;
+    -moz-border-radius: 15px;
+    border-radius: 20px;
+    padding:5px;
+}
+
 @media (max-width: 797px) {
     body {
         padding-left: 0px;
@@ -118,13 +133,61 @@ blockquote cite {
     /*font: 18px/23px "Cantarell", sans-serif;*/
   color: #ffffff;
     text-align: center;
-  padding-top: 150px;
-    margin-top: 0px;
+  padding-top: 0px;
+    margin-top: 100px;
         margin-right: 0px;
     vertical-align: middle;
     background-color: rgba(0,0,0,0.0);
+    }
+    .rightcol{
+    font: 18px/23px "Cantarell", sans-serif;
+    vertical-align: middle;
+    text-align: left;
+    background-color: rgba(0,0,0,0.1);
+    padding-top: 0px;
+    padding-left: 0px;
+    margin-right: 0px;
+    padding-right: 800px;
+    padding: 0px;
+    -moz-border-radius: 15px;
+    border-radius: 20px;
+    padding:5px;
+    }
+
 }
+
+@media (max-width: 340px) {
+    body {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    .container-fluid {
+    /*font: 18px/23px "Cantarell", sans-serif;*/
+  color: #ffffff;
+    text-align: center;
+  padding-top: 300px;
+    margin-top: 300px;
+        margin-right: 0px;
+    vertical-align: middle;
+    background-color: rgba(0,0,0,0.0);
+    }
+    .rightcol{
+    font: 18px/23px "Cantarell", sans-serif;
+    vertical-align: middle;
+    text-align: left;
+    background-color: rgba(0,0,0,0.05);
+    padding-top: 100px;
+    padding-left: 0px;
+    margin-right: 0px;
+    padding-right: 800px;
+    padding: 0px;
+    -moz-border-radius: 15px;
+    border-radius: 20px;
+    padding:5px;
+    }
+
 }
+
 
 .leftcol{
     vertical-align: middle;
@@ -135,20 +198,7 @@ blockquote cite {
     margin-right: 0px;
 }
 
-.rightcol{
-    font: 18px/23px "Cantarell", sans-serif;
-    vertical-align: middle;
-    text-align: left;
-    background-color: rgba(255,255,255,0.3);
-    padding-top: 0px;
-    padding-left: 0px;
-    margin-right: 0px;
-    padding-right: 800px;
-    padding: 0px;
-    -moz-border-radius: 15px;
-    border-radius: 20px;
-    padding:5px;
-}
+
 
 .container2 {
   display: table;
