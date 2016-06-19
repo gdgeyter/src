@@ -28,11 +28,11 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 EMAIL_HOST = 'smtpout.secureserver.net'
-EMAIL_HOST_USER = "gert@fishrail.com"
-EMAIL_HOST_PASSWORD = "Gert@fishrail"
+EMAIL_HOST_USER = "info@fishrail.com"
+EMAIL_HOST_PASSWORD = "fishrail4u2"
 EMAIL_PORT = 3535
 EMAIL_USE_TLS = False
-
+µ
 # Application definition
 
 INSTALLED_APPS = (
