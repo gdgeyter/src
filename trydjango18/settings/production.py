@@ -2,7 +2,7 @@
 #static is here mvpland_static
 #postgresql -- dbfishrail
 #username -- gdgeyter
-#password -- gert0408
+#password -- fishrail4u2
 
 
 """
@@ -117,7 +117,7 @@ if not settings.DEBUG:
 	        'ENGINE': 'django.db.backends.postgresql_psycopg2',
 	        'NAME': "dbfishrail",
 	        'USER': "gdgeyter",
-	        'PASSWORD': "gert0408",
+	        'PASSWORD': "fishrail4u2",
 	        'HOST': '127.0.0.1',
 	        'PORT': '5432',
 	    }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="c867e9d3-a03b-4f02-a311-f6eb351fcc49" name="gdgeyter@gdgeyter.webfactional.com" url="http://gdgeyter.webfactional.com">
+        <fileTransfer host="gdgeyter.webfactional.com" port="22" rootFolder="/home/gdgeyter" accessType="SFTP" username="gdgeyter">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

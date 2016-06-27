@@ -4,3 +4,9 @@ django-registration-redux==1.4
 Twython==3.4
 pandas==0.18.1
 matplotlib==1.5.1
+psycopg2==2.6.1
+SQLAlchemy==1.0.13
+networkx==1.11
+twitter==1.17
+tweepy==3.5.0
+
