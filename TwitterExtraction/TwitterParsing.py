@@ -80,10 +80,10 @@ import json
 from collections import Counter
 from nltk import bigrams
 
-fname = 'test_Euro.json'
+fname = 'twitter.json'
 
 punctuation = list(string.punctuation)
-stop = stopwords.words('english') + punctuation + ['RT', 'via','…','The','0','1']
+stop = stopwords.words('english') + punctuation + ['RT', 'via','…','The','0','1','Thx','fr']
 
 with open(fname, 'r') as f:
     count_all1 = Counter()
@@ -95,7 +95,7 @@ with open(fname, 'r') as f:
         if (tweet['lang'] == 'en'):
             # Create a list with all the terms
             terms_stop = [term for term in preprocess(tweet['text']) if term not in stop]
-            print(terms_stop)
+            #print(terms_stop)
             # Count terms only once, equivalent to Document Frequency
             terms_single = set(terms_stop)
             # Count hashtags only
@@ -117,7 +117,9 @@ with open(fname, 'r') as f:
         count_all4.update(terms_bigram)
 
     # Print the first 5 most frequent words
-    print(count_all1.most_common(5))
-    print(count_all2.most_common(5))
-    print(count_all3.most_common(5))
-    print(count_all4.most_common(15))
+    #print(count_all1.most_common(25))
+    for hash in count_all2.most_common(30):
+        print(hash)
+
+    #print(count_all3.most_common(25))
+    #print(count_all4.most_common(15))

@@ -31,4 +31,6 @@ class MyListener(StreamListener):
 
 twitter_stream = Stream(auth, MyListener())
 twitter_stream.filter(track=['#HROS','#HRanalytics', '#peopleAnalytics',
-                             '#workforceAnalytics', '#performancemanagement','#peoplemanagement'])
+                             '#workforceAnalytics', '#performancemanagement','#peoplemanagement',
+                             '#SmarterHR','#beyondhrforum','#HRtech','#FutureofHR',
+                             '#IBMKenexa','#RecruitWithData'])
