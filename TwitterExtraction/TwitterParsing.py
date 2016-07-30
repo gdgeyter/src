@@ -6,8 +6,12 @@ import json
 from collections import Counter
 from nltk.corpus import stopwords
 import string
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
+import vincent
 
-
+os.chdir('/Users/gdgeyter/Documents/Projects/trydjango18/src/TwitterExtraction')
 emoticons_str = r"""
     (?:
         [:=;] # Eyes
@@ -84,7 +88,7 @@ fname = 'twitter.json'
 
 punctuation = list(string.punctuation)
 stop = stopwords.words('english') + punctuation + ['RT', 'via','…','The','0','1','Thx','fr']
-
+alltweets = []
 with open(fname, 'r') as f:
     count_all1 = Counter()
     count_all2 = Counter()
@@ -93,6 +97,7 @@ with open(fname, 'r') as f:
     for line in f:
         tweet = json.loads(line)
         if (tweet['lang'] == 'en'):
+            alltweets.append(tweet)
             # Create a list with all the terms
             terms_stop = [term for term in preprocess(tweet['text']) if term not in stop]
             #print(terms_stop)
@@ -121,5 +126,47 @@ with open(fname, 'r') as f:
     for hash in count_all2.most_common(30):
         print(hash)
 
+    for hash in count_all2.most_common(30):
+        print(hash)
     #print(count_all3.most_common(25))
     #print(count_all4.most_common(15))
+
+    dates_HRanalytics = []
+    # f is the file pointer to the JSON data set
+    with open(fname, 'r') as f:
+        for line in f:
+            tweet = json.loads(line)
+            # let's focus on hashtags only at the moment
+            terms_hash = [term for term in preprocess(tweet['text']) if term.startswith('#')]
+            # track when the hashtag is mentioned
+            if '#HRAnalytics' in terms_hash:
+                dates_HRanalytics.append(tweet['created_at'])
+
+    # a list of "1" to count the hashtags
+    ones = [1] * len(dates_HRanalytics)
+    # the index of the series
+    idx = pd.DatetimeIndex(dates_HRanalytics)
+    # the actual series (at series of 1s for the moment)
+    HRanalytics = pd.Series(ones, index=idx)
+    print(HRanalytics)
+    # Resampling / bucketing
+    per_minute = HRanalytics.resample('1H', how='sum').fillna(0)
+    print(per_minute)
+    time_chart = vincent.Line(per_minute)
+    time_chart.axis_titles(x='Time', y='Freq')
+    time_chart.to_json('time_chart.json')
+    print('end')
+
+    # tweets['country'] = map(lambda tweet: tweet['place']['country'] if tweet['place'] != None else None, alltweets)
+    # tweets_by_country = tweets['country'].value_counts()
+    # print(tweets.country.unique())
+    # fig, ax = plt.subplots()
+    # ax.tick_params(axis='x', labelsize=15)
+    # ax.tick_params(axis='y', labelsize=10)
+    # ax.set_xlabel('Countries', fontsize=15)
+    # ax.set_ylabel('Number of tweets', fontsize=15)
+    # ax.set_title('Top 5 countries', fontsize=15, fontweight='bold')
+    # tweets_by_country[:5].plot(ax=ax, kind='bar', color='blue')
+    #
+    # import time\
+

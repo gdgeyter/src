@@ -55,7 +55,7 @@ def contact(request):
         form_full_name = form.cleaned_data.get('full_name')
         # print(email, message, full_name)
         subject = 'site contact form'
-        from_email = settings.EMAIL_HOST_USER
+        from_email = settings.SERVER_EMAIL
         to_email = [from_email, 'gertdegeyter@gmail.com']
         contact_message = "%s :%s via %s"%(
             form_full_name,
@@ -108,7 +108,7 @@ def clear_landing_page(request):
         form_last_name = form.cleaned_data.get('last_name')
         # print(email, message, full_name)
         subject = 'Fishrail newsletter'
-        from_email = settings.EMAIL_HOST_USER
+        from_email = settings.SERVER_EMAIL
         to_email = [form_email]
         contact_message = "Hi there " + form_first_name + ", \n \n" + "Thanks for subscribing to our newsletter! \nWe'll keep you informed on any updates \n \nKind regards \nThe Fishrail team"
         send_mail(subject, contact_message, from_email, to_email, fail_silently=False)

@@ -41,19 +41,25 @@
 
 {% block content %}
     {% if request.user.is_authenticated %}
-        {% if queryset %}
-            <h1>Welcome Staff!</h1>
-            <table class="table">
-            {% for instance in queryset %}
-                <tr><td>{{ forloop.counter }}</td><td>{{ instance  }}</td> <td>{{ instance.full_name }} </td> <td>{{ instance.timestamp|timesince }} </td</tr>
-                {% if instance.email == "thismail@juqqst.edu" %}
-                <tr><td>is equal</td></tr>
-                {% endif %}
-            {% endfor %}
-            </table>
-        {% else %}
-            <h1>You are logged in!</h1>
-        {% endif %}
+        You are logged in!</h1>
+{#        <head>#}
+{#            <title>Vega Scaffold</title>#}
+{#            <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>#}
+{#            <script src="http://d3js.org/topojson.v1.min.js"></script>#}
+{#            <script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>#}
+{#            <script src="http://trifacta.github.com/vega/vega.js"></script>#}
+{#        </head>#}
+{#        <body>#}
+{#            <div id="vis"></div>#}
+{#        </body>#}
+{#        <script type="text/javascript">#}
+{#        // parse a spec and create a visualization view#}
+{#        function parse(spec) {#}
+{#          vg.parse.spec(spec, function(chart) { chart({el:"#vis"}).update(); });#}
+{#        }#}
+{#        parse("{% static 'js/time_chart.json' %}");#}
+{#        </script>#}
+
 
     {% else %}
         <div class="row">

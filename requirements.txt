@@ -9,4 +9,6 @@ SQLAlchemy==1.0.13
 networkx==1.11
 twitter==1.17
 tweepy==3.5.0
-
+vincent=0.4.4
+python-nvd3=0.14.2
+django-nvd3=0.9.7

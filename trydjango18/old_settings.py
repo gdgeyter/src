@@ -27,12 +27,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-EMAIL_HOST = 'smtpout.secureserver.net'
-EMAIL_HOST_USER = "info@fishrail.com"
-EMAIL_HOST_PASSWORD = "fishrail4u2"
-EMAIL_PORT = 3535
-EMAIL_USE_TLS = False
-µ
+EMAIL_HOST = 'smtp.webfaction.com'
+EMAIL_HOST_USER = "infofishrail"
+EMAIL_HOST_PASSWORD = "9000iswademax"
+DEFAULT_FROM_EMAIL = 'info@fishrail.com'
+SERVER_EMAIL = 'info@fishrail.com'
+EMAIL_PORT = 587
+
 # Application definition
 
 INSTALLED_APPS = (
