@@ -34,7 +34,7 @@ twitter_stream.filter(track=['#HROS','#HRanalytics', '#peopleAnalytics',
                              '#workforceAnalytics', '#performancemanagement','#peoplemanagement',
                              '#SmarterHR','#beyondhrforum','#HRtech','#FutureofHR',
                              '#IBMKenexa','#RecruitWithData','#hrTrends','#hrdata','#hrm','#hcm',
-                             'employerbranding','recruitmentanalytics', '#talentanalytics', '#CHRO',
+                             '#employerbranding','#recruitmentanalytics', '#talentanalytics', '#CHRO',
                              '#engagementanalytics','#retentionanalytics','#learninganalytics',
                              '#employeeanalytics','#quantifiedemployee','#leaderschipanalytics',
                              '#smaterworkforce','#wfas2015', '#wfas2016'])

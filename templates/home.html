@@ -18,21 +18,16 @@
 {% block jumbotron %}
     {% if not request.user.is_authenticated %}
     <!-- Main component for a primary marketing message or call to action -->
-    <div class="jumbotron">
+    <div class="jumbotron" style="font-family: CreativeType">
         <div class="container">
             <div class="row">
                 <div class="col-sm-6">
                     <h1>Welcome</h1>
                     <p>Welcome to Fishrail</p>
                     <p>
-                        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join us!
-                            (Free)&raquo;</a>
+                        Login to get a first view!
+{#                        <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join us!&raquo;</a>#}
                     </p>
-                </div>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/QKz8PPFYhe0" frameborder="0"
-                        allowfullscreen></iframe>
-
-            </div>
         </div>
     </div>
     </div>
@@ -41,154 +36,167 @@
 
 {% block content %}
     {% if request.user.is_authenticated %}
-        You are logged in!
-        <br>
-        <input class="btn  btn-primary" type="execute" value="Determine trending"/>
-        <br>
-     <head>
-        <meta charset="utf-8">
-        <title>My First Chart</title>
-        <link href={% static 'css/nv.d3.css' %} rel="stylesheet" type="text/css">
-        <script src={% static 'js/d3.v3.js' %}></script>
-        <script src={% static 'js/nv.d3.js' %}></script>
-        <script src={% static 'js/nv.d3.min.js' %}></script>
-        <script src={% static 'js/d3-jetpack.js' %}></script>
-{#        <style type="text/css">#}
-{#        body { font-family: 'Helvetica Neue', Helvetica; font-weight: 300; padding: 20px;}#}
-{#        th { text-align: left; }#}
-{#        th, td { padding: 0 1em 0.5ex 0;}#}
-{#        th.center, td.center { text-align: center; }#}
-{#        th.num, td.num { text-align: right; }#}
-    </head>
-    <body>
-        <svg style='height:600px'/>
-        <script>
-            var url_to_data = "{% static "js/stackedAreaData.json" %}"
-        </script>
-        <script src={% static 'js/mychart.js' %}></script>
-
-        <script>
-
-    // the table rows, typically loaded from data file using d3.csv
-    var movies = [
-        { title: "The Godfather", year: 1972, length: 175, budget: 6000000, rating: 9.1 },
-        { title: "The Shawshank Redemption", year: 1994, length: 142, budget: 25000000, rating: 9.1 },
-        { title: "The Lord of the Rings: The Return of the King", year: 2003, length: 251, budget: 94000000, rating: 9 },
-        { title: "The Godfather: Part II", year: 1974, length: 200, budget: 13000000, rating: 8.9 },
-        { title: "Shichinin no samurai", year: 1954, length: 206, budget: 500000, rating: 8.9 },
-        { title: "Buono, il brutto, il cattivo, Il", year: 1966, length: 180, budget: 1200000, rating: 8.8 },
-        { title: "Casablanca", year: 1942, length: 102, budget: 950000, rating: 8.8 },
-        { title: "The Lord of the Rings: The Fellowship of the Ring", year: 2001, length: 208, budget: 93000000, rating: 8.8 },
-        { title: "The Lord of the Rings: The Two Towers", year: 2002, length: 223, budget: 94000000, rating: 8.8 },
-        { title: "Pulp Fiction", year: 1994, length: 168, budget: 8000000, rating: 8.8 }
-    ];
-
-    // column definitions
-    var columns = [
-        { head: 'Movie title', cl: 'title', html: ƒ('title') },
-        { head: 'Year', cl: 'center', html: ƒ('year') },
-        { head: 'Length', cl: 'center', html: ƒ('length', length()) },
-        { head: 'Budget', cl: 'num', html: ƒ('budget', d3.format('$,')) },
-        { head: 'Rating', cl: 'num', html: ƒ('rating', d3.format('.1f')) }
-    ];
-
-    // create table
-    var table = d3.select('body')
-        .append('table');
-
-    // create table header
-    table.append('thead').append('tr')
-        .selectAll('th')
-        .data(columns).enter()
-        .append('th')
-        .attr('class', ƒ('cl'))
-        .text(ƒ('head'));
-
-    // create table body
-    table.append('tbody')
-        .selectAll('tr')
-        .data(movies).enter()
-        .append('tr')
-        .selectAll('td')
-        .data(function(row, i) {
-            return columns.map(function(c) {
-                // compute cell values for this specific row
-                var cell = {};
-                d3.keys(c).forEach(function(k) {
-                    cell[k] = typeof c[k] == 'function' ? c[k](row,i) : c[k];
-                });
-                return cell;
-            });
-        }).enter()
-        .append('td')
-        .html(ƒ('html'))
-        .attr('class', ƒ('cl'));
-
-    function length() {
-        var fmt = d3.format('02d');
-        return function(l) { return Math.floor(l / 60) + ':' + fmt(l % 60) + ''; };
-    }
-
-
-    </script>
-    </body>
-
-
-{#        <head>#}
-{#            <title>Vega Scaffold</title>#}
-{#            <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>#}
-{#            <script src="http://d3js.org/topojson.v1.min.js"></script>#}
-{#            <script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>#}
-{#            <script src="http://trifacta.github.com/vega/vega.js"></script>#}
-{#        </head>#}
-{#        <body>#}
-{#            <div id="vis"></div>#}
-{#        </body>#}
-{#        <script type="text/javascript">#}
-{#        // parse a spec and create a visualization view#}
-{#        function parse(spec) {#}
-{#          vg.parse.spec(spec, function(chart) { chart({el:"#vis"}).update(); });#}
-{#        }#}
-{#        parse("{% static 'js/time_chart.json' %}");#}
-{#        </script>#}
-
-    {% else %}
-        <div class="row">
-            <div class="col-sm-3 pull-right">
-                <p class="lead text-align-center">Sign Up Now</p>
-
-                <form method="POST" action="">{% csrf_token %}
-                    {{ form|crispy }}
-                    <input class="btn  btn-primary" type="submit" value="Sign Up"/>
-</form>
+{#        <br>#}
+{#        <input class="btn  btn-primary" type="execute" value="Determine trending"/>#}
+{#        <br>#}
+    <div class="jumbotron" style="font-family: CreativeType">
+    <h3>Time chart of Tweets</h3>
+        <div class="container">
+            <div class="row">
+                    <head>
+                        <title>Vega Scaffold</title>
+                        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+                        <script src="http://d3js.org/topojson.v1.min.js"></script>
+                        <script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
+                        <script src="http://trifacta.github.com/vega/vega.js"></script>
+                    </head>
+                    <body>
+                        <div id="vis"></div>
+                    </body>
+                    <script type="text/javascript">
+                    // parse a spec and create a visualization view
+                    function parse(spec) {
+                      vg.parse.spec(spec, function(chart) { chart({el:"#vis"}).update(); });
+                    }
+                    parse("{% static 'js/time_chart.json' %}");
+                    </script>
             </div>
-            <div class="col-sm-3">
-                <p class="lead text-align-center">Platform</p>
-                <img src="{% static 'img/Platform logo.png' %}" class="img-responsive"/>
-            </div>
-            <div class="col-sm-3">
-                <p class="lead text-align-center">User based ratings
-                    <br/>
-                    <br/>
-                <span class="rating">
-          <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span
-                        class="star"></span>
-            </span>
-                    <br/>
-                    <br/>
-                    <i class="fa fa-bar-chart fa-5x"></i>
-                </p>
-            </div>
-            <div class="col-sm-3">
-                <p class="lead text-align-center">Advanced analytics
-                    <br/>
-                <span class="fa-stack fa-lg fa-5x">
-{#                    <i class="fa fa-cog fa-stack-2x fa-spin"></i>#}
-                    <i class="fa fa-cog fa-stack-2x"></i>
-                    </span>
-                </p>
+            <div class="row">
+                <div class="col-sm-6">
+                    <a class="twitter-timeline"  href="https://twitter.com/search?q=%23SmarterHR%20OR%20%23beyondhrforum%20OR%20%23HRtech%20OR%20%23FutureofHR%20OR%20%23IBMKenexa%20OR%20%23RecruitWithData%20OR%20%23hrTrends%20OR%20%23hrdata%20OR%20%23hrm%20OR%20%23hcm%20OR%20%23employerbranding%20OR%20%23recruitmentanalytics%20OR%20%23talentanalytics%20OR%20%23CHRO%20OR%20%23engagementanalytics%20OR%20%23retentionanalytics%20OR%20%23learninganalytics%20OR%20%23employeeanalytics%20OR%20%23quantifiedemployee%20OR%20%23leaderschipanalytics%20OR%20%23smaterworkforce%20OR%20%23wfas2015%20OR%20%23wfas2" data-widget-id="761280510211547136">Tweets about #SmarterHR OR #beyondhrforum OR #HRtech OR #FutureofHR OR #IBMKenexa OR #RecruitWithData OR #hrTrends OR #hrdata OR #hrm OR #hcm OR #employerbranding OR #recruitmentanalytics OR #talentanalytics OR #CHRO OR #engagementanalytics OR #retentionanalytics OR #learninganalytics OR #employeeanalytics OR #quantifiedemployee OR #leaderschipanalytics OR #smaterworkforce OR #wfas2015 OR #wfas2</a>
+                    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                </div>
+                <div class="col-sm-6" >
+                  Top 10 trending hashtags <br>
+                   <br> #recruitment
+                    <br>#Reruiting
+                   <br> #CaseStudies
+                   <br> #performanceappraisal
+                   <br> #HRprofs
+                   <br> #Payroll
+                   <br> #Simitive
+                   <br> #wisestep
+                   <br> #predictiveanalytics
+                   <br> #BeTech
+{#                         <head>#}
+{#                            <meta charset="utf-8">#}
+{#                            <title>Top 10 Trending</title>#}
+{#                            <link href={% static 'css/nv.d3.css' %} rel="stylesheet" type="text/css">#}
+{#                            <script src={% static 'js/d3.v3.js' %}></script>#}
+{#                            <script src={% static 'js/nv.d3.js' %}></script>#}
+{#                            <script src={% static 'js/nv.d3.min.js' %}></script>#}
+{#                            <script src={% static 'js/d3-jetpack.js' %}></script>#}
+{#                        </head>#}
+{#                        <body>#}
+{#                            <script>#}
+{##}
+{#                        // the table rows, typically loaded from data file using d3.csv#}
+{#                        var movies = [#}
+{#                            { title: "The Godfather", year: 1972, length: 175, budget: 6000000, rating: 9.1 },#}
+{#                            { title: "The Shawshank Redemption", year: 1994, length: 142, budget: 25000000, rating: 9.1 },#}
+{#                            { title: "The Lord of the Rings: The Return of the King", year: 2003, length: 251, budget: 94000000, rating: 9 },#}
+{#                            { title: "The Godfather: Part II", year: 1974, length: 200, budget: 13000000, rating: 8.9 },#}
+{#                            { title: "Shichinin no samurai", year: 1954, length: 206, budget: 500000, rating: 8.9 },#}
+{#                            { title: "Buono, il brutto, il cattivo, Il", year: 1966, length: 180, budget: 1200000, rating: 8.8 },#}
+{#                            { title: "Casablanca", year: 1942, length: 102, budget: 950000, rating: 8.8 },#}
+{#                            { title: "The Lord of the Rings: The Fellowship of the Ring", year: 2001, length: 208, budget: 93000000, rating: 8.8 },#}
+{#                            { title: "The Lord of the Rings: The Two Towers", year: 2002, length: 223, budget: 94000000, rating: 8.8 },#}
+{#                            { title: "Pulp Fiction", year: 1994, length: 168, budget: 8000000, rating: 8.8 }#}
+{#                        ];#}
+{##}
+{#                        // column definitions#}
+{#                        var columns = [#}
+{#                            { head: 'Movie title', cl: 'title', html: ƒ('title') },#}
+{#                            { head: 'Year', cl: 'center', html: ƒ('year') },#}
+{#                            { head: 'Length', cl: 'center', html: ƒ('length', length()) },#}
+{#                            { head: 'Budget', cl: 'num', html: ƒ('budget', d3.format('$,')) },#}
+{#                            { head: 'Rating', cl: 'num', html: ƒ('rating', d3.format('.1f')) }#}
+{#                        ];#}
+{##}
+{#                        // create table#}
+{#                        var table = d3.select('body')#}
+{#                            .append('table');#}
+{##}
+{#                        // create table header#}
+{#                        table.append('thead').append('tr')#}
+{#                            .selectAll('th')#}
+{#                            .data(columns).enter()#}
+{#                            .append('th')#}
+{#                            .attr('class', ƒ('cl'))#}
+{#                            .text(ƒ('head'));#}
+{##}
+{#                        // create table body#}
+{#                        table.append('tbody')#}
+{#                            .selectAll('tr')#}
+{#                            .data(movies).enter()#}
+{#                            .append('tr')#}
+{#                            .selectAll('td')#}
+{#                            .data(function(row, i) {#}
+{#                                return columns.map(function(c) {#}
+{#                                    // compute cell values for this specific row#}
+{#                                    var cell = {};#}
+{#                                    d3.keys(c).forEach(function(k) {#}
+{#                                        cell[k] = typeof c[k] == 'function' ? c[k](row,i) : c[k];#}
+{#                                    });#}
+{#                                    return cell;#}
+{#                                });#}
+{#                            }).enter()#}
+{#                            .append('td')#}
+{#                            .html(ƒ('html'))#}
+{#                            .attr('class', ƒ('cl'));#}
+{##}
+{#                        function length() {#}
+{#                            var fmt = d3.format('02d');#}
+{#                            return function(l) { return Math.floor(l / 60) + ':' + fmt(l % 60) + ''; };#}
+{#                        }#}
+{##}
+{##}
+{#                        </script>#}
+{#                        </body>#}
+                 </div>
             </div>
         </div>
+    </div>
 
+
+
+{#    {% else %}#}
+{#        <div class="row">#}
+{#            <div class="col-sm-3 pull-right">#}
+{#                <p class="lead text-align-center">Sign Up Now</p>#}
+{##}
+{#                <form method="POST" action="">{% csrf_token %}#}
+{#                    {{ form|crispy }}#}
+{#                    <input class="btn  btn-primary" type="submit" value="Sign Up"/>#}
+{#</form>#}
+{#            </div>#}
+{#            <div class="col-sm-3">#}
+{#                <p class="lead text-align-center">Platform</p>#}
+{#                <img src="{% static 'img/Platform logo.png' %}" class="img-responsive"/>#}
+{#            </div>#}
+{#            <div class="col-sm-3">#}
+{#                <p class="lead text-align-center">User based ratings#}
+{#                    <br/>#}
+{#                    <br/>#}
+{#                <span class="rating">#}
+{#          <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span#}
+{#                        class="star"></span>#}
+{#            </span>#}
+{#                    <br/>#}
+{#                    <br/>#}
+{#                    <i class="fa fa-bar-chart fa-5x"></i>#}
+{#                </p>#}
+{#            </div>#}
+{#            <div class="col-sm-3">#}
+{#                <p class="lead text-align-center">Advanced analytics#}
+{#                    <br/>#}
+{#                <span class="fa-stack fa-lg fa-5x">#}
+{#                    <i class="fa fa-cog fa-stack-2x fa-spin"></i>#}
+{#                    <i class="fa fa-cog fa-stack-2x"></i>#}
+{#                    </span>#}
+{#                </p>#}
+{#            </div>#}
+{#        </div>#}
+{##}
     {% endif %}
 {% endblock %}

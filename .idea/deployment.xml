@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="PublishConfigData" serverName="gdgeyter@gdgeyter.webfactional.com" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;local.py;db.sqlite3">
+  <component name="PublishConfigData" serverName="gdgeyter@gdgeyter.webfactional.com" exclude=".svn;.cvs;.idea;.DS_Store;.git;.hg;local.py;db.sqlite3" showDifferentInSync="false" showNewOnSourceInSync="false" showNewOnTargetInSync="false">
     <serverData>
       <paths name="gdgeyter@gdgeyter.webfactional.com">
         <serverdata>
           <mappings>
             <mapping deploy="/webapps/fishrail/src" local="$PROJECT_DIR$" web="/" />
-            <mapping local="" />
           </mappings>
         </serverdata>
       </paths>

@@ -179,6 +179,6 @@ def tfidf(word):
     return term_ctr[word] * 1.0 / (1 + doc_ctr[word]) # Add one smoothing to avoid division by zero.
 
 trending_topics = sorted(term_ctr.keys(), key=tfidf, reverse=True)[:10]
-
+print(trending_topics)
 print("Top 10 trending topics")
 print('\n'.join(trending_topics))

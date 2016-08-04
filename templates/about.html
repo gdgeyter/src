@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
 {% load crispy_forms_tags  %}
-
+{% load staticfiles %}
 {% block content %}
-    <div class="row">
-        <div class="col-sm-6 col-sm-offset-3">
-                <div class="text-align-center col-sm-12">
-                <h1 class={% if title_align_center %}"text-align-center"{% endif %}>About Us</h1>
-                <p> This is a paragraph about us!</p>
-                <p> This is another paragraph about us!</p>
-            </div>
-        </div>
+{#    <div class="row">#}
+{#        <div class="col-sm-6 col-sm-offset-3">#}
+{#                <div class="text-align-center col-sm-12">#}
+{#                <h1 class={% if title_align_center %}"text-align-center"{% endif %}>About Us</h1>#}
+{#                <p> This is a paragraph about us!</p>#}
+{#                <p> This is another paragraph about us!</p>#}
+{#            </div>#}
+{#        </div>#}
+
+<div style='position:absolute;z-index:0;left:0;top:30;width:100%;height:100%'>
+  <img src="{% static 'img/fishrail_about.png' %}" style='width:100%;height:100%' alt='[]' />
+</div>
+
 {% endblock %}
