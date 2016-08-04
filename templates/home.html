@@ -9,8 +9,8 @@
 <style>
     {% block style %}
         .jumbotron {
-            background-color: #A0CA7C;
-            color: #525252;
+            background-color: #A;
+            color: #9B9A9B;
         }
     {% endblock  %}
 </style>
@@ -23,7 +23,7 @@
             <div class="row">
                 <div class="col-sm-6">
                     <h1>Welcome</h1>
-                    <p>Welcome to Fishrail, this is an example of a landing page</p>
+                    <p>Welcome to Fishrail</p>
                     <p>
                         <a class="btn btn-lg btn-primary" href="../../components/#navbar" role="button">Join us!
                             (Free)&raquo;</a>
@@ -41,7 +41,99 @@
 
 {% block content %}
     {% if request.user.is_authenticated %}
-        You are logged in!</h1>
+        You are logged in!
+        <br>
+        <input class="btn  btn-primary" type="execute" value="Determine trending"/>
+        <br>
+     <head>
+        <meta charset="utf-8">
+        <title>My First Chart</title>
+        <link href={% static 'css/nv.d3.css' %} rel="stylesheet" type="text/css">
+        <script src={% static 'js/d3.v3.js' %}></script>
+        <script src={% static 'js/nv.d3.js' %}></script>
+        <script src={% static 'js/nv.d3.min.js' %}></script>
+        <script src={% static 'js/d3-jetpack.js' %}></script>
+{#        <style type="text/css">#}
+{#        body { font-family: 'Helvetica Neue', Helvetica; font-weight: 300; padding: 20px;}#}
+{#        th { text-align: left; }#}
+{#        th, td { padding: 0 1em 0.5ex 0;}#}
+{#        th.center, td.center { text-align: center; }#}
+{#        th.num, td.num { text-align: right; }#}
+    </head>
+    <body>
+        <svg style='height:600px'/>
+        <script>
+            var url_to_data = "{% static "js/stackedAreaData.json" %}"
+        </script>
+        <script src={% static 'js/mychart.js' %}></script>
+
+        <script>
+
+    // the table rows, typically loaded from data file using d3.csv
+    var movies = [
+        { title: "The Godfather", year: 1972, length: 175, budget: 6000000, rating: 9.1 },
+        { title: "The Shawshank Redemption", year: 1994, length: 142, budget: 25000000, rating: 9.1 },
+        { title: "The Lord of the Rings: The Return of the King", year: 2003, length: 251, budget: 94000000, rating: 9 },
+        { title: "The Godfather: Part II", year: 1974, length: 200, budget: 13000000, rating: 8.9 },
+        { title: "Shichinin no samurai", year: 1954, length: 206, budget: 500000, rating: 8.9 },
+        { title: "Buono, il brutto, il cattivo, Il", year: 1966, length: 180, budget: 1200000, rating: 8.8 },
+        { title: "Casablanca", year: 1942, length: 102, budget: 950000, rating: 8.8 },
+        { title: "The Lord of the Rings: The Fellowship of the Ring", year: 2001, length: 208, budget: 93000000, rating: 8.8 },
+        { title: "The Lord of the Rings: The Two Towers", year: 2002, length: 223, budget: 94000000, rating: 8.8 },
+        { title: "Pulp Fiction", year: 1994, length: 168, budget: 8000000, rating: 8.8 }
+    ];
+
+    // column definitions
+    var columns = [
+        { head: 'Movie title', cl: 'title', html: ƒ('title') },
+        { head: 'Year', cl: 'center', html: ƒ('year') },
+        { head: 'Length', cl: 'center', html: ƒ('length', length()) },
+        { head: 'Budget', cl: 'num', html: ƒ('budget', d3.format('$,')) },
+        { head: 'Rating', cl: 'num', html: ƒ('rating', d3.format('.1f')) }
+    ];
+
+    // create table
+    var table = d3.select('body')
+        .append('table');
+
+    // create table header
+    table.append('thead').append('tr')
+        .selectAll('th')
+        .data(columns).enter()
+        .append('th')
+        .attr('class', ƒ('cl'))
+        .text(ƒ('head'));
+
+    // create table body
+    table.append('tbody')
+        .selectAll('tr')
+        .data(movies).enter()
+        .append('tr')
+        .selectAll('td')
+        .data(function(row, i) {
+            return columns.map(function(c) {
+                // compute cell values for this specific row
+                var cell = {};
+                d3.keys(c).forEach(function(k) {
+                    cell[k] = typeof c[k] == 'function' ? c[k](row,i) : c[k];
+                });
+                return cell;
+            });
+        }).enter()
+        .append('td')
+        .html(ƒ('html'))
+        .attr('class', ƒ('cl'));
+
+    function length() {
+        var fmt = d3.format('02d');
+        return function(l) { return Math.floor(l / 60) + ':' + fmt(l % 60) + ''; };
+    }
+
+
+    </script>
+    </body>
+
+
 {#        <head>#}
 {#            <title>Vega Scaffold</title>#}
 {#            <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>#}
@@ -59,7 +151,6 @@
 {#        }#}
 {#        parse("{% static 'js/time_chart.json' %}");#}
 {#        </script>#}
-
 
     {% else %}
         <div class="row">
@@ -82,7 +173,7 @@
                 <span class="rating">
           <span class="star"></span><span class="star"></span><span class="star"></span><span class="star"></span><span
                         class="star"></span>
-        </span>
+            </span>
                     <br/>
                     <br/>
                     <i class="fa fa-bar-chart fa-5x"></i>

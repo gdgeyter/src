@@ -3,13 +3,13 @@ body {
 }
 
 .navbar-static-top {
-    background-color: #525252;
-    border-color: #525252;
+    background-color: #9B9A9B;
+    border-color: #9B9A9B;
     margin-bottom: 0px !important;
 }
 
 .navbar-default .navbar-brand {
-    color: #A0CA7C;
+    color: #9BF53B;
     font-style: oblique;
     font-weight: bolder;
     font-size: x-large;
@@ -23,7 +23,7 @@ body {
 }
 
 .navbar-default .navbar-nav > li > a {
-    color: #A0CA7C;
+    color: #9BF53B;
 
 }
 .navbar-default .navbar-nav > li > a:hover {
@@ -36,10 +36,10 @@ body {
 }
 
 .navbar-toggle {
-    border-color: #A0CA7C !important;
+    border-color: #9BF53B !important;
 }
 
 .navbar-toggle:hover {
-    background-color: #A0CA7C !important;
+    background-color: #9BF53B !important;
 }
 

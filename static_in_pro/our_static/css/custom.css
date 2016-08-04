@@ -18,10 +18,13 @@
 .rating span.star:before {
   content: "\f006";
   padding-right: 5px;
-  color: #525252;
+  color: #9B9A9B;
 }
 .rating span.star:hover:before,
 .rating span.star:hover ~ span.star:before {
   content: "\f005";
-  color: #A0CA7C;
+  color: #9BF53B;
 }
+
+@font-face { font-family: CreativeType; src: url('CreativeType-Regular.otf'); }
+@font-face { font-family: CreativeType; font-weight: bold; src: url('CreativeType-Bold.otf');}

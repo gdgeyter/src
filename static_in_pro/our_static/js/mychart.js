@@ -1,24 +1,8 @@
 /**
  * Created by gdgeyter on 27/07/16.
  */
-function myData() {
-    var series1 = [];
-    for(var i =1; i < 100; i ++) {
-        series1.push({
-            x: i, y: 100 / i
-        });
-    }
-
-    return [
-        {
-            key: "Series #1",
-            values: series1,
-            color: "#0000ff"
-        }
-    ];
-}
-
-nv.addGraph(function() {
+d3.json(url_to_data, function(data) {
+  nv.addGraph(function() {
     var chart = nv.models.lineChart();
 
     chart.xAxis
@@ -30,7 +14,7 @@ nv.addGraph(function() {
         ;
 
     d3.select("svg")
-        .datum(myData())
+        .datum(data)
         .transition().duration(500).call(chart);
 
     nv.utils.windowResize(
@@ -41,3 +25,5 @@ nv.addGraph(function() {
 
     return chart;
 });
+});
+

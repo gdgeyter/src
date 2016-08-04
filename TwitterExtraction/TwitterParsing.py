@@ -156,17 +156,29 @@ with open(fname, 'r') as f:
     time_chart.axis_titles(x='Time', y='Freq')
     time_chart.to_json('time_chart.json')
     print('end')
+print(len(alltweets))
 
-    # tweets['country'] = map(lambda tweet: tweet['place']['country'] if tweet['place'] != None else None, alltweets)
-    # tweets_by_country = tweets['country'].value_counts()
-    # print(tweets.country.unique())
-    # fig, ax = plt.subplots()
-    # ax.tick_params(axis='x', labelsize=15)
-    # ax.tick_params(axis='y', labelsize=10)
-    # ax.set_xlabel('Countries', fontsize=15)
-    # ax.set_ylabel('Number of tweets', fontsize=15)
-    # ax.set_title('Top 5 countries', fontsize=15, fontweight='bold')
-    # tweets_by_country[:5].plot(ax=ax, kind='bar', color='blue')
-    #
-    # import time\
+from collections import defaultdict
+#Mapping from term to number of tweets
+doc_ctr = defaultdict(int)
 
+for tweet in alltweets[0:(len(alltweets)-1000)]:
+    for word in set(tweet['text'].split()):
+        if word[0] == '#':
+            doc_ctr[word] += 1
+
+#counts in target set
+term_ctr = defaultdict(int)
+
+for tweet in alltweets[(len(alltweets)-1000):len(alltweets)]:
+    for word in tweet['text'].split():
+        if word[0] == '#':
+            term_ctr[word] += 1
+
+def tfidf(word):
+    return term_ctr[word] * 1.0 / (1 + doc_ctr[word]) # Add one smoothing to avoid division by zero.
+
+trending_topics = sorted(term_ctr.keys(), key=tfidf, reverse=True)[:10]
+
+print("Top 10 trending topics")
+print('\n'.join(trending_topics))

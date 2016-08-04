@@ -6,7 +6,7 @@ content: none;
 }
 body {
   /* Location of the image */
-  background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url(../img/testWhite3.png);
+  background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url(../img/SITE_font.png);
 
   /* Image is centered vertically and horizontally at all times */
   background-position: center center;
@@ -34,7 +34,7 @@ body {
   body {
     /* The file size of this background image is 93% smaller
      * to improve page load speed on mobile internet connections */
-    background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url(../img/testWhite3_mobile.png);
+    background-image: linear-gradient( rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) ), url(../img/MOBILE_font.png);
 
 	    /* Image is centered vertically and horizontally at all times */
     background-position: center center;
